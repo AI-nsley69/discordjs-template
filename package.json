@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "scripts": {
+    "newcmd": "node scripts/newcmd.js --",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0"
+  }
+}

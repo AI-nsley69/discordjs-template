@@ -1,0 +1,5 @@
+{
+    "prefix": "!",
+    "adminPrefix": "?",
+    "adminIds": ["your id goes here"]
+}
