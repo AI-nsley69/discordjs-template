@@ -1,5 +1,7 @@
 {
-    "prefix": "!",
-    "adminPrefix": "?",
-    "adminIds": ["your id goes here"]
+	"prefix": "!",
+	"adminPrefix": "?",
+	"adminIds": [
+		"213585513326706690"
+	]
 }

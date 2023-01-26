@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "newcmd": "node scripts/newcmd.js --",
+    "configure": "node scripts/configure.js",
     "start": "node index.js"
   },
   "dependencies": {

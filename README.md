@@ -4,7 +4,12 @@ This is a discord.js bot template derived from the work done in [AinsBOT](https:
 ## How do I get started?
 You can use this as a template for a new github repository, then you can start modifying the code on that repository!
 
-After you have cloned your own repository, please edit the `config.json` and `.env` to your liking. You can then install the dependencies with 
+After you have cloned your own repository, please edit the `config.json` and `.env` to your liking or use the configure script with the following command:
+```
+yarn configure
+```
+
+You can then install the dependencies with 
 ```
 yarn install
 ```
