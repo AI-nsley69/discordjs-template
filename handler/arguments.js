@@ -23,6 +23,7 @@ async function argParser(bot, contents, commandArgObject) {
 			fieldValues[i][1] = null;
 		}
 		else if (fieldElement === ReqArg.StringCoalescing || fieldElement === OptArg.StringCoalescing) {
+			if (contents.join().length < 1 && isRequired) throw new Error(`Could not parse value for the ${fieldElement} argument`);
 			fieldValues[i][1] = contents.join();
 			hasMetCoalesc = true;
 		}
@@ -32,7 +33,7 @@ async function argParser(bot, contents, commandArgObject) {
 			// if the parsed value is null and required, there command run is invalid
 			if (!parsedValue) {
 				if (isRequired) {
-					throw new Error(`Could not parse value for the ${fieldElement} arument`);
+					throw new Error(`Could not parse value for the ${fieldElement} argument`);
 				}
 				// If the parsed value is null but the arg is optional, the content will not be removed
 				// so that it can be tried to be parsed with the next arg

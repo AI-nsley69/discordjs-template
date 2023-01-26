@@ -10,7 +10,7 @@ export default new CommandBuilder()
 	.setRun(async (bot, ctx) => {
 		ctx.getInstance().delete().catch(err => {
 			ctx.err(err);
-			console.log(err);
+			bot.logger.log(err);
 		});
 		ctx.respond(ctx.getArgs().string);
 	});

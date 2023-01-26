@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
 import fs from 'fs';
+import logger from './modules/logger.js';
 
 const time = performance.now();
 
@@ -13,13 +14,13 @@ const client = new Client({
 	],
 });
 
-const bot = {
-	client: client,
-	config: JSON.parse(fs.readFileSync('config.json')),
-	startedAt: time,
-};
-
 async function main() {
+	const bot = {
+		client: client,
+		config: JSON.parse(fs.readFileSync('config.json')),
+		logger: logger,
+		startedAt: time,
+	};
 
 	bot.commandGroups = fs.readdirSync('./commands', { withFileTypes: true })
 		.filter(d => d.isDirectory())

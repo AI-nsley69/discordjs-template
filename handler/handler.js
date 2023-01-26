@@ -24,20 +24,19 @@ async function commandHandler(bot, message) {
 		return;
 	}
 
-	try {
-		ctx.setArgs((await argParser(bot, args, cmd.args)));
-	}
-	catch (err) {
-		ctx.err(err);
-		return;
-	}
+	const ctxArgs = await argParser(bot, args, cmd.args).catch(err => {
+		bot.logger.log(err);
+		ctx.err(err.toString());
+	});
+	if (!ctxArgs) return;
+	ctx.setArgs(ctxArgs);
 
 	if (cmd.guild && !isGuild(message)) return;
 
-	cmd.run(bot, ctx)
+	await cmd.run(bot, ctx)
 		.catch(err => {
 			ctx.err(err);
-			console.log(err);
+			bot.logger.log(err);
 		});
 }
 

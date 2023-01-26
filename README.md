@@ -62,5 +62,9 @@ ctx.getArgs()
 ## What is bot?
 It is an object containing some information about the bot, it is important to note that if you wish to get the client information, you would call `bot.client` and continue from there.
 
+
+## Logger
+The bot has a simple logger that will log the time of the event to console and write it to a file called `bot.log`, if you wish to report your own error, please use the `bot.logger.log()` function and pass the error to it. It will handle the rest.
+
 ## I found some issues or I need help
 Feel free to report any issues you've found on the issue tracker or join the [AinsBOT](https://discord.gg/GBN3xdbSMR) discord server for assistance in the #template-support channel.
