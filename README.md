@@ -62,6 +62,28 @@ ctx.getArgs()
 ## What is bot?
 It is an object containing some information about the bot, it is important to note that if you wish to get the client information, you would call `bot.client` and continue from there.
 
+## Adding your own events
+Adding new events is not particularly descriptive, you need to create a new file in `events/` with the name of the event (caps sensitive), then add code like the following inside:
+```js
+async function run(bot, example) {
+    // Code here
+}
+
+export default { run };
+```
+
+However, you will have to figure out what data is sent on the event and name the variables accordingly, the event handler will pass any arguments it receives from the discord.js library to the event, and example is just an example argument, you can have `bot, example1, example2` as the arguments and so on. The first argument **needs** to be the bot one, then the event related one comes after. 
+
+If you're curious to which events exist, and what data is sent to them you can read about them on the [discord.js docs](https://discord.js.org/#/docs/discord.js/main/class/Client). The events part will list all of their events, with the name of the file you can have for it and then the paramaters you're supposed to take. 
+
+For example, if we wanted to look at a channel update, we would have a file called `channelUpdate.js` in the `events/` directory, the event gives us data about the old channel and the new channel. The structure of the file would look like this:
+```js
+async function run(bot, oldChannel, newChannel) {
+    // Code to run on the event goes here
+}
+
+export default { run };
+```
 
 ## Logger
 The bot has a simple logger that will log the time of the event to console and write it to a file called `bot.log`, if you wish to report your own error, please use the `bot.logger.log()` function and pass the error to it. It will handle the rest.
