@@ -22,7 +22,7 @@ const bot = {
 async function main() {
 
 	bot.commandGroups = fs.readdirSync('./commands', { withFileTypes: true })
-		.filter(d => d.isDirectory() && d.name !== 'admin')
+		.filter(d => d.isDirectory())
 		.map(d => d.name);
 
 	const waits = [];

@@ -1,3 +1,5 @@
+import { EmbedBuilder } from '@discordjs/builders';
+
 /**
  * @param instance instance of message/interaction object.
  */
@@ -36,5 +38,14 @@ export class Context {
 
 	respondEmbed(embeds) {
 		this.instance.channel.send({ embeds: embeds });
+	}
+
+	err(str) {
+		const embed = new EmbedBuilder()
+			.setTitle('Something went wrong when running this command!')
+			.setColor(0xFF0000)
+			.setDescription(str);
+
+		this.respondEmbed([embed]);
 	}
 }
