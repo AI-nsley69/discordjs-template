@@ -1,5 +1,5 @@
 ## What is this?
-This is a discord.js bot template derived from the work done in [AinsBOT](https://github.com/AI-nsley69/AinsBOT) with some stripped features.
+This is a discord.js bot template derived from the work done in [AinsBOT](https://github.com/AI-nsley69/AinsBOT) with some stripped features. The bot currently works with message-based commands like the ol' fashion bots.
 
 ## How do I get started?
 You can use this as a template for a new github repository, then you can start modifying the code on that repository!
@@ -44,6 +44,20 @@ then in your code you can call it with `ctx.getArgs().example` and it will retur
 
 ## What is ctx?
 ctx is short for context, which is a class the bot uses to contain all of the information important to the command, I highly recommend you check out the `handler/context.js` file to see what it can do, as you most likely will only need to get the arguments or call the other functions to get things like author, guild and channel objects.
+
+The following calls can be made to the ctx variable:
+```js
+// This will get the user object of the author of the message
+ctx.getAuthor()
+// This will get the channel object of the channel the message was sent in
+ctx.getChannel()
+// This will get the guild object of the guild the message was sent in
+ctx.getGuild()
+// This will get the instance of the message object that called this command
+ctx.getInstance()
+// This will get the arguments passed to the command
+ctx.getArgs()
+```
 
 ## What is bot?
 It is an object containing some information about the bot, it is important to note that if you wish to get the client information, you would call `bot.client` and continue from there.
