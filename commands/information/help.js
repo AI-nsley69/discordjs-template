@@ -10,7 +10,6 @@ export default new CommandBuilder()
 	})
 	.setRun(async (bot, ctx) => {
 		const group = ctx.getArgs().group;
-		console.log(ctx.getArgs().group.promise);
 
 		if (!group || !Object.values(bot.commandGroups).includes(group)) {
 			const embed = new EmbedBuilder()
